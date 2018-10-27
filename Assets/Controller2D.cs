@@ -42,9 +42,9 @@ public class Controller2D : RaycastController
 
         HorizontalCollisions(ref moveAmount);
         if (moveAmount.y != 0)
-        {
-            VerticalCollisions(ref moveAmount);
-        }
+       {
+        VerticalCollisions(ref moveAmount);
+       }
 
         transform.Translate(moveAmount);
 

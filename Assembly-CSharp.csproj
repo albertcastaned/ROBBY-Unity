@@ -61,12 +61,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Camera.cs" />
+    <Compile Include="Assets\AnimateDestroy.cs" />
+    <Compile Include="Assets\AttackD.cs" />
+    <Compile Include="Assets\AttackU.cs" />
+    <Compile Include="Assets\BulletMovement.cs" />
+    <Compile Include="Assets\CamMove.cs" />
     <Compile Include="Assets\Controller2D.cs" />
+    <Compile Include="Assets\CursorMove.cs" />
+    <Compile Include="Assets\DebugText.cs" />
+    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\GlobalVariables.cs" />
     <Compile Include="Assets\PlatformController.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerInput.cs" />
     <Compile Include="Assets\RaycastController.cs" />
+    <Compile Include="Assets\SFXAttack.cs" />
+    <Compile Include="Assets\SFXFlameCode.cs" />
+    <Compile Include="Assets\SmokeCode.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/alber/PortTest/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

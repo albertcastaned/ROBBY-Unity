@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Through
+  - Attack
+  - Entity
+  - Solid
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - Player
   - Obstacle
   - Floor
-  - 
+  - Entity
   - 
   - 
   - 
