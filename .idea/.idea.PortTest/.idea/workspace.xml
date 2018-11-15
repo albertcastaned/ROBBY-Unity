@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="963db254-ed4d-49d8-83e8-788de34c68ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/PortTest/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/PortTest/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player/Attacks/AttackDownDefaultA.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player/Attacks/AttackDownDefaultA.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player/Attacks/AttackUpDefaultA.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player/Attacks/AttackUpDefaultA.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player/PIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player/PIdle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player/PRun.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player/PRun.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AttackD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AttackD.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AttackU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AttackU.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BulletMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BulletMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CamMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CamMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursorMove.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CursorMove.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkDownDefault.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkDownDefault.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkDownDefault.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkDownDefault.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkUpDefault.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkUpDefault.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkUpDefault.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Attacks/AtkUpDefault.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/0f4bb3bb-c62c-4689-9c5e-795dfce82b7b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/0f4bb3bb-c62c-4689-9c5e-795dfce82b7b.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/2bdeb88f-df5c-4c8c-8908-6674686250d4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/2bdeb88f-df5c-4c8c-8908-6674686250d4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/4a51f003-9b77-41fd-b950-b7495273780e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/4a51f003-9b77-41fd-b950-b7495273780e.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/4bd3462c-5324-4aae-9017-7cde34568a16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/4bd3462c-5324-4aae-9017-7cde34568a16.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/9bcae469-ba56-4adc-9852-fedad185c17f.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/9bcae469-ba56-4adc-9852-fedad185c17f.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/sPIdle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/sPIdle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptMapper" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptMapper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/04/047ec442f82d9b348ac25950885297fe" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/04/047ec442f82d9b348ac25950885297fe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/04/047ec442f82d9b348ac25950885297fe.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/04/047ec442f82d9b348ac25950885297fe.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/05/05393d7d9b65aef4f8cd3e187adf4369" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/05/05393d7d9b65aef4f8cd3e187adf4369.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0a/0aac96e9e54d3f040b0714fd4e85b606" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0a/0aac96e9e54d3f040b0714fd4e85b606" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0a/0aac96e9e54d3f040b0714fd4e85b606.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0a/0aac96e9e54d3f040b0714fd4e85b606.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/12/1218ba7d404e7874c97cfe7da5d727a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/12/1218ba7d404e7874c97cfe7da5d727a6.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/39/39838afc854a6df4a8b6be362b3ea83c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/39/39838afc854a6df4a8b6be362b3ea83c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/39/39838afc854a6df4a8b6be362b3ea83c.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/39/39838afc854a6df4a8b6be362b3ea83c.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3c/3cbaf5909526020489244f7da1b4f53c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3c/3cbaf5909526020489244f7da1b4f53c.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/42/425568b2f72b1264c81259d86db83a00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/42/425568b2f72b1264c81259d86db83a00.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4a/4a204855ab72aa644b5dbbab76f29dc6" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4a/4a204855ab72aa644b5dbbab76f29dc6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4d/4d52557d954917c4e924be5fb82f37a3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4d/4d52557d954917c4e924be5fb82f37a3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4d/4d52557d954917c4e924be5fb82f37a3.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4d/4d52557d954917c4e924be5fb82f37a3.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/62/62c72accb301b2e4fbe171ac0b26b6f1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/62/62c72accb301b2e4fbe171ac0b26b6f1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/70/704f83100e9839449beac37fbdc7f876" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/70/704f83100e9839449beac37fbdc7f876" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/73/73d92eaaed682ce458ba5a9fd459008f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/73/73d92eaaed682ce458ba5a9fd459008f.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ab/abd6d0bc3f8cdf547bb74678b239a331" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ab/abd6d0bc3f8cdf547bb74678b239a331.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b1/b1bd1c00a6dd38a47b3bb495230b3387" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b1/b1bd1c00a6dd38a47b3bb495230b3387" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c1/c1969d8c62a2d1e499cfa208d56a3cae" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c1/c1969d8c62a2d1e499cfa208d56a3cae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c4/c426a16218a566d42ad73000dd95c44b.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c4/c426a16218a566d42ad73000dd95c44b.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ea/ea1cc914a6796794bbcf2d10a2baf649" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ea/ea1cc914a6796794bbcf2d10a2baf649" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f5/f5f80ab89ee06ea4699f6e654fcb3550" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f5/f5f80ab89ee06ea4699f6e654fcb3550" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f6/f6fc0885fd63c2a4eb2c9d6a7473e4ed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f6/f6fc0885fd63c2a4eb2c9d6a7473e4ed.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f8a3e9e5ecfe20146a6e011f9c87454e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f8a3e9e5ecfe20146a6e011f9c87454e.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PortTest.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PortTest.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1343474145">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.51" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cs" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Player.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="601">
+              <caret line="546" column="19" selection-start-line="546" selection-start-column="19" selection-end-line="546" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Player.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor" />
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor &amp; Play" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="963db254-ed4d-49d8-83e8-788de34c68ea" name="Default Changelist" comment="" />
+      <created>1541715042874</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541715042874</updated>
+      <workItem from="1541715055227" duration="83000" />
+      <workItem from="1541900438360" duration="37000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="120000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="260" y="20" width="1400" height="1000" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25373134" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="546" column="19" selection-start-line="546" selection-start-column="19" selection-end-line="546" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

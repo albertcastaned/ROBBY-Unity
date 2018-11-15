@@ -16,7 +16,6 @@ public class AttackU : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
-
         pscript = player.GetComponent<Player>();
         face = pscript.getFacing();
         anim = GetComponent<Animator>();
@@ -59,25 +58,25 @@ public class AttackU : MonoBehaviour {
 
     IEnumerator Pause()
     {
-        print(Time.time);
        GlobalVariables.pause = true;
 
-       yield return new WaitForSeconds(0.2f);
+
+        yield return new WaitForSeconds(0.1f);
 
         GlobalVariables.pause = false;
     }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-
+        
             Enemy enemy = hitInfo.GetComponent<Enemy>();
 
             if (enemy != null)
             {
                 
                 if(!spr.flipX)
-                enemy.TakeDamage(20, 1.5f, 6f);
+                enemy.TakeDamage(20, 1.3f, 6f);
                 else
-                enemy.TakeDamage(20, -1.5f, 6f);
+                enemy.TakeDamage(20, -1.3f, 6f);
 
             StartCoroutine(Pause());
             }

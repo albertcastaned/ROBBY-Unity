@@ -1,11 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Controller2D))]
 public class Enemy : MonoBehaviour {
-    public int health = 100;
 
+
+    public float MaxHealth;
+    public float CurrentHealth;
+
+    public GameObject healthBarUI;
+    public Slider slider;
+    public Image sliderImg;
+
+    public GameObject dmgText;
     public float maxJumpHeight = 1;
     public float minJumpHeight = 0.2f;
 
@@ -27,7 +36,10 @@ public class Enemy : MonoBehaviour {
     SpriteRenderer tempSprite;
     void Start()
     {
-        tempSprite = GetComponent<SpriteRenderer>();
+
+        CurrentHealth = MaxHealth;
+        slider.value = CalculateHealth();
+        tempSprite = GetComponentInChildren<SpriteRenderer>();
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -58,8 +70,18 @@ public class Enemy : MonoBehaviour {
             SetDirectionalInput(0);
         }
     }
+    float CalculateHealth()
+    {
+        return CurrentHealth / MaxHealth;
+    }
     void Update()
     {
+        slider.value = CalculateHealth();
+        sliderImg.color = Color.Lerp(Color.red, Color.green, slider.value);
+        if(CurrentHealth < MaxHealth)
+        {
+            healthBarUI.SetActive(true);
+        }
         if (GlobalVariables.pause == true)
             return;
 
@@ -81,6 +103,8 @@ public class Enemy : MonoBehaviour {
                 velocity.y = 0;
             }
         }
+        tempSprite.transform.localScale = new Vector3(Approach(tempSprite.transform.localScale.x, 1f, 0.04f), Approach(tempSprite.transform.localScale.y, 1f, 0.04f), 1f);
+
     }
     public void Jump()
     {
@@ -110,22 +134,28 @@ public class Enemy : MonoBehaviour {
         else if ((directionalInput.x == -1))
             facing = -1;
     }
-    public void TakeDamage(int damage, float vx, float vy)
+    public void TakeDamage(float damage, float vx, float vy)
     {
-
+        tempSprite.transform.localScale = new Vector3(1.33f, 0.77f, 1f);
         if (!damaged)
         {
-            health -= damage;
+            CurrentHealth -= damage;
             damaged = true;
             tempSprite.color = Color.red;
 
+
+            if(dmgText)
+            {
+                var txt = Instantiate(dmgText, transform.position, Quaternion.identity, transform);
+                txt.GetComponent<TextMesh>().text = damage.ToString();
+            }
 
 
             damagedTimer = 0.25f;
             velocity.x += vx + (Random.Range(0.2f, 0.5f) * Mathf.Sign(vx));
             velocity.y += vy;
 
-            if (health <= 0)
+            if (CurrentHealth <= 0)
                 Die();
         }
 
@@ -157,6 +187,8 @@ public class Enemy : MonoBehaviour {
             {
 
                     velocity.x = velocity.x;
+            if (controller.collisions.right || controller.collisions.left)
+                velocity.x = 0;
                 
 
             }
@@ -167,5 +199,22 @@ public class Enemy : MonoBehaviour {
     {
         Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+        Player player = hitInfo.GetComponent<Player>();
+
+        if (player != null)
+        {
+
+            if(player.getRollAttack())
+            {
+                TakeDamage(20f, 3f * player.getFacing(), 1f);
+            }
+        }
+
+
+
     }
 }

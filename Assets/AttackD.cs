@@ -34,7 +34,7 @@ public class AttackD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + 0.6f * face, player.transform.position.y, player.transform.position.z);
+        transform.position = new Vector3(player.transform.position.x + 0.35f * face, player.transform.position.y, player.transform.position.z);
         if (GlobalVariables.pause == true)
         {
             anim.enabled = false;
@@ -59,10 +59,10 @@ public class AttackD : MonoBehaviour
 
     IEnumerator Pause()
     {
-        print(Time.time);
+
         GlobalVariables.pause = true;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         GlobalVariables.pause = false;
     }
@@ -79,6 +79,10 @@ public class AttackD : MonoBehaviour
             else
                 enemy.TakeDamage(20, -1f, -4f);
 
+            if(pscript.velocity.y!=0)
+            {
+                pscript.velocity.y = 5f;
+            }
             StartCoroutine(Pause());
         }
 

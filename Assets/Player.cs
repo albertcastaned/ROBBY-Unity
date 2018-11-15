@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     public float accelerationTimeAirborne = .07f;
     public float accelerationTimeGrounded = .04f;
     public float airFric = .07f;
-    float moveSpeed = 2;
+    float moveSpeed = 2.5f;
 
     public Vector2 wallJumpClimb;
     public Vector2 wallJumpOff;
@@ -24,11 +24,12 @@ public class Player : MonoBehaviour {
     public float wallStickTime = .08f;
     float timeToUnstick;
 
-    float gravity;
+    [HideInInspector]
+    public float gravity;
     float maxJumpVelocity;
     float minJumpVelocity;
 
-    Vector3 velocity;
+    public Vector3 velocity;
     float velocityXSmoothing;
     float tempVelX;
     bool doubleJump;
@@ -37,35 +38,60 @@ public class Player : MonoBehaviour {
 
     public Transform firePoint;
     public GameObject bulletPrefab;
-
-    Controller2D controller;
-    public Animator animator;
+    
+    [HideInInspector]
+    public Controller2D controller;
+    private Animator animator;
     private BoxCollider2D hitbox;
     private SpriteRenderer srender;
     bool wallSliding;
     int wallDirX;
-    public int facing;
+    int facing;
     int originalFacing;
+    bool auxFlip;
+    public bool upFlip;
     Vector2 directionalInput;
+    public bool rollAttack;
+    bool onGroundPrev;
 
     public GameObject atk;
     public GameObject atk2;
+    public GameObject atk3;
+    public GameObject runSFX;
     void Start() {
-        srender = GetComponent<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
+        srender = GetComponentInChildren<SpriteRenderer>();
         controller = GetComponent<Controller2D>();
         hitbox = GetComponent<BoxCollider2D>();
+        upFlip = false;
+        rollAttack = false;
+        auxFlip = false;
 
         doubleJump = false;
         roll = false;
         rollback = false;
         tempVelX = 0;
         facing = 1;
+        onGroundPrev = true;
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
         print("Gravity: " + gravity + "  Jump Velocity: " + maxJumpVelocity);
     }
     void Update() {
+        
+      
+        srender.transform.eulerAngles = new Vector3(srender.transform.localRotation.x, srender.transform.localRotation.y,-1f* controller.collisions.slopeAngle);
+        if(Mathf.Abs(velocity.x) > 10f)
+        {
+            rollAttack = true;
+            srender.color = Color.red;
+        }
+        if(rollAttack && velocity.x == 0)
+        {
+            rollAttack = false;
+            srender.color = Color.white;
+        }
 
         if (GlobalVariables.pause == true)
         {
@@ -114,33 +140,51 @@ public class Player : MonoBehaviour {
             doubleJump = false;
 
         }
+        srender.transform.localScale = new Vector3(Approach(srender.transform.localScale.x, 1f, 0.02f), Approach(srender.transform.localScale.y, 1f, 0.02f), 1f);
 
 
+    }
+    public bool getRollAttack()
+    {
+        return rollAttack;
     }
     public int getFacing()
     {
         return facing;
     }
-    public void Melee()
+    public void Melee(int id)
     {
         Vector3 pos = transform.position;
-        pos.x += 0.6f * facing;
-        GameObject attack = Instantiate(atk, pos, transform.rotation) as GameObject;
-        SpriteRenderer satk = attack.GetComponent<SpriteRenderer>();
-        if (facing == -1)
-            satk.flipX = true;
+        switch (id)
+        {
+            case 1:
+                pos.x += 0.35f * facing;
+                GameObject attack = Instantiate(atk, pos, transform.rotation) as GameObject;
+                SpriteRenderer satk = attack.GetComponent<SpriteRenderer>();
+                if (facing == -1)
+                    satk.flipX = true;
+                break;
+                
+            case 2:
+                
+                pos.x += 0.35f * facing;
+                GameObject attack2 = Instantiate(atk2, pos, transform.rotation) as GameObject;
+                SpriteRenderer satk2 = attack2.GetComponent<SpriteRenderer>();
+                if (facing == -1)
+                    satk2.flipX = true;
+                break;
+            case 3:
+
+                pos.y += 0.2f;
+                GameObject attack3 = Instantiate(atk3, pos, transform.rotation) as GameObject;
+                SpriteRenderer satk3 = attack3.GetComponent<SpriteRenderer>();
+                if (facing == -1)
+                    satk3.flipX = true;
+                break;
+        }
 
     }
-    public void Melee2()
-        {
-            Vector3 pos = transform.position;
-            pos.x += 0.6f * facing;
-            GameObject attack2 = Instantiate(atk2, pos, transform.rotation) as GameObject;
-            SpriteRenderer satk = attack2.GetComponent<SpriteRenderer>();
-            if (facing == -1)
-                satk.flipX = true;
 
-        }
     
     public void SetDirectionalInput(Vector2 input) {
 
@@ -159,11 +203,11 @@ public class Player : MonoBehaviour {
     }
     public void ShootBullet()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+       // Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
     public void OnJumpInputDown()
     {
-
+        srender.transform.localScale = new Vector3(1.33f, 0.86f, 1f);
         if (wallSliding)
         {
             wallSlideSpeedMax = 1;
@@ -188,6 +232,7 @@ public class Player : MonoBehaviour {
 
         if (controller.collisions.below)
         {
+
             if (controller.collisions.slidingDownMaxSlope)
             {
                 if (directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x))
@@ -206,6 +251,7 @@ public class Player : MonoBehaviour {
             if (!doubleJump && !wallSliding)
             {
                 velocity.y = maxJumpVelocity;
+                velocity.x = velocity.x;
                 animator.SetBool("dJump", true);
                 doubleJump = true;
             }
@@ -215,19 +261,24 @@ public class Player : MonoBehaviour {
 
     public void OnJumpInputUp()
     {
+        //srender.transform.localScale = new Vector3(1.33f,0.67f,1f);
 
         if (velocity.y > minJumpVelocity)
             velocity.y = minJumpVelocity;
     }
     public void OnRoll()
     {
-        if ((!roll) && (!controller.collisions.left && !controller.collisions.right))
+        if ((!roll) && (!controller.collisions.left && !controller.collisions.right) && !upFlip)
         {
             roll = true;
+            auxFlip = false;
             if (velocity.x == 0)
                 tempVelX = facing * (velocity.x + 12);
+
             tempVelX = facing * (Mathf.Abs(velocity.x) + 4);
-            animator.Play(Animator.StringToHash("PRollJ"));
+ 
+               
+
         }
 
 	}
@@ -235,17 +286,23 @@ public class Player : MonoBehaviour {
 
 	void UpdateAnimation()
 	{
-        if (roll == true)
+        if (upFlip)
+        {   if (!auxFlip)
+                auxFlip = true;
+            roll = false;
+            animator.Play(Animator.StringToHash("PAirFlip"));
+        }
+        else if (roll && !auxFlip)
         {
-            //animator.Play(Animator.StringToHash("PRollJ"));
+                animator.Play(Animator.StringToHash("PRollJ"));
         }
         else
         {
             if (!wallSliding)
             {
-                if (directionalInput.x == 1)
+                if (directionalInput.x > 0)
                     srender.flipX = false;
-                else if (directionalInput.x == -1)
+                else if (directionalInput.x < 0)
                     srender.flipX = true;
             }
             else
@@ -265,7 +322,7 @@ public class Player : MonoBehaviour {
 
             if (controller.collisions.below)
             {
-
+                auxFlip = false;
                 if (directionalInput.x == 0)
                     animator.Play(Animator.StringToHash("PIdle"));
                 else
@@ -279,8 +336,9 @@ public class Player : MonoBehaviour {
                 {
                     animator.Play(Animator.StringToHash("PSlide"));
                 }
-                else if (doubleJump == true)
+                else if (doubleJump && !auxFlip)
                 {
+
                     animator.Play(Animator.StringToHash("PRollJ"));
                 }
                 else
@@ -313,7 +371,12 @@ public class Player : MonoBehaviour {
 			wallSliding = true;
 			animator.SetBool("wallSlide",true);
 			print("Wall sliding");
-			if(velocity.y < -wallSlideSpeedMax)
+            for (int i = 0; i < 3; i++)
+            {
+                Vector3 aux = new Vector3(transform.position.x + -0.1f * facing, transform.position.y + 0.1f + Random.Range(0.01f, 0.03f), Random.Range(-0.5f, 0.5f));
+                Instantiate(runSFX, aux, transform.rotation);
+            }
+            if (velocity.y < -wallSlideSpeedMax)
 			{
 
                 wallSlideSpeedMax += Time.deltaTime * 3;
@@ -349,7 +412,20 @@ public class Player : MonoBehaviour {
     void CalculateVelocity()
     {
         float targetVelocityX = directionalInput.x * moveSpeed;
+        if(controller.collisions.below && !onGroundPrev)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Vector3 aux = new Vector3(transform.position.x + Random.Range(-0.2f, 0.2f), transform.position.y - 0.2f + Random.Range(-0.01f, 0.01f), Random.Range(-0.5f,0.5f));
+                Instantiate(runSFX, aux, transform.rotation);
+            }
+            srender.transform.localScale = new Vector3(1.23f, 0.83f, 1f);
 
+
+            onGroundPrev = true;
+        }
+        if (!controller.collisions.below)
+            onGroundPrev = false;
         #region Rolling
         if (controller.collisions.left || controller.collisions.right)
         {
@@ -360,6 +436,7 @@ public class Player : MonoBehaviour {
         }
         if (roll)
         {   
+        
             float angularVel = (1 / Mathf.Cos(controller.collisions.slopeAngle * Mathf.Deg2Rad)) / 4;
 
             if (controller.collisions.slopeAngle == 0)
@@ -413,17 +490,22 @@ public class Player : MonoBehaviour {
             {
 
                 velocity.x = Approach(velocity.x, targetVelocityX, accelerationTimeGrounded);
+                if (Random.Range(0f, 100f) > 80f && Mathf.Abs(velocity.x) > 1f)
+                {
+                    Vector3 aux = new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z);
+                    Instantiate(runSFX, aux, transform.rotation);
+                }
                 
             }
             else
             {
-                if (Input.GetKey(KeyCode.A))
+                if (directionalInput.x < 0)
                 {
                     if (velocity.x > 0)
                         velocity.x = Approach(velocity.x, 0, airFric);
                     velocity.x = Approach(velocity.x, -moveSpeed, accelerationTimeAirborne);
                 }
-                else if (Input.GetKey(KeyCode.D))
+                else if (directionalInput.x > 0)
                 {
                     if (velocity.x < 0)
                         velocity.x = Approach(velocity.x, 0, airFric);
@@ -452,4 +534,5 @@ public class Player : MonoBehaviour {
         
         GUI.Label(new Rect(40, 110, 100, 20), rollback.ToString());
     }
+
 }

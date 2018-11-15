@@ -171,13 +171,18 @@ MonoBehaviour:
   wallLeap: {x: 3, y: 6}
   wallSlideSpeedMax: 1
   wallStickTime: 0.05
+  gravity: 0
+  velocity: {x: 0, y: 0, z: 0}
   firePoint: {fileID: 4400737907862000}
   bulletPrefab: {fileID: 1251262226439074, guid: 0f32007077d193c4ca01676125cb79eb,
     type: 2}
-  animator: {fileID: 95289043805895228}
-  facing: 1
-  atk: {fileID: 1484927825028480, guid: 1218ba7d404e7874c97cfe7da5d727a6, type: 2}
-  atk2: {fileID: 1484927825028480, guid: 73d92eaaed682ce458ba5a9fd459008f, type: 2}
+  controller: {fileID: 0}
+  upFlip: 0
+  rollAttack: 0
+  atk: {fileID: 1164658949914410, guid: 3c2be42a36313fd4aa2ac09436033090, type: 2}
+  atk2: {fileID: 1164658949914410, guid: 384631b8fc62e9f448b8985f9a947a4f, type: 2}
+  atk3: {fileID: 1164658949914410, guid: 4dea0a29b32a65247bdfeab2d31bc23e, type: 2}
+  runSFX: {fileID: 1012478700719116, guid: 4c39a9d32d1929842becb0bdfa212526, type: 2}
 --- !u!212 &212706674244554772
 SpriteRenderer:
   m_ObjectHideFlags: 1

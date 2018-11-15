@@ -37,7 +37,7 @@ public class BulletMovement : MonoBehaviour {
         
         if (enemy!=null)
         {
-            enemy.TakeDamage(20,1f * Mathf.Sign(dir.x),1f);
+            enemy.TakeDamage(5,1f * Mathf.Sign(dir.x),1f);
         }
         if (hitInfo.tag == "Solid" || hitInfo.tag == "Enemy")
         {

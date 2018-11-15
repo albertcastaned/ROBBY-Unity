@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\alber\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\alber\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_PortTest.570497285.00" t="ExcludeRecursive" />
+    <e p="C:\Users\alber\PortTest" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AnimateDestroy.cs" t="Include" />
+        <e p="AttackD.cs" t="Include" />
+        <e p="AttackU.cs" t="Include" />
+        <e p="AttackUAir.cs" t="Include" />
+        <e p="BulletMovement.cs" t="Include" />
+        <e p="CamMove.cs" t="Include" />
+        <e p="Controller2D.cs" t="Include" />
+        <e p="DebugText.cs" t="Include" />
+        <e p="Enemy.cs" t="Include" />
+        <e p="FloatingText.cs" t="Include" />
+        <e p="GlobalVariables.cs" t="Include" />
+        <e p="PlatformController.cs" t="Include" />
+        <e p="Player.cs" t="Include" />
+        <e p="PlayerInput.cs" t="Include" />
+        <e p="RaycastController.cs" t="Include" />
+        <e p="SFXAttack.cs" t="Include" />
+        <e p="SFXFlameCode.cs" t="Include" />
+        <e p="SFXRunParticle.cs" t="Include" />
+        <e p="SmokeCode.cs" t="Include" />
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PortTest.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
