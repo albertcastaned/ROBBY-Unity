@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
     bool doubleJump;
     bool roll;
     bool rollback;
+    bool rollAgain;
 
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -53,10 +54,14 @@ public class Player : MonoBehaviour {
     Vector2 directionalInput;
     public bool rollAttack;
     bool onGroundPrev;
+    bool rollFlip;
+    bool meteor;
+    float deltaTime;
 
     public GameObject atk;
     public GameObject atk2;
     public GameObject atk3;
+    public GameObject atk4;
     public GameObject runSFX;
     void Start() {
         animator = GetComponentInChildren<Animator>();
@@ -66,9 +71,11 @@ public class Player : MonoBehaviour {
         upFlip = false;
         rollAttack = false;
         auxFlip = false;
-
+        rollAgain = false;
+        rollFlip = false;
         doubleJump = false;
         roll = false;
+        meteor = false;
         rollback = false;
         tempVelX = 0;
         facing = 1;
@@ -76,12 +83,15 @@ public class Player : MonoBehaviour {
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
-        print("Gravity: " + gravity + "  Jump Velocity: " + maxJumpVelocity);
     }
     void Update() {
-        
-      
-        srender.transform.eulerAngles = new Vector3(srender.transform.localRotation.x, srender.transform.localRotation.y,-1f* controller.collisions.slopeAngle);
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        if(!controller.collisions.left && !controller.collisions.left && controller.collisions.below)
+        srender.transform.eulerAngles = new Vector3(srender.transform.localRotation.x, srender.transform.localRotation.y,-1f* controller.collisions.slopeAngleSigned);
+        else
+        {
+            srender.transform.eulerAngles = new Vector3(0f,0f,0f);
+        }
         if(Mathf.Abs(velocity.x) > 10f)
         {
             rollAttack = true;
@@ -168,6 +178,9 @@ public class Player : MonoBehaviour {
             case 2:
                 
                 pos.x += 0.35f * facing;
+                if(!controller.collisions.below)
+                animator.Play(Animator.StringToHash("PAirMeteor"));
+                meteor = true;
                 GameObject attack2 = Instantiate(atk2, pos, transform.rotation) as GameObject;
                 SpriteRenderer satk2 = attack2.GetComponent<SpriteRenderer>();
                 if (facing == -1)
@@ -180,6 +193,14 @@ public class Player : MonoBehaviour {
                 SpriteRenderer satk3 = attack3.GetComponent<SpriteRenderer>();
                 if (facing == -1)
                     satk3.flipX = true;
+                break;
+            case 4:
+                if (roll)
+                    roll = false;
+                GameObject attack4 = Instantiate(atk4, pos, transform.rotation) as GameObject;
+                SpriteRenderer satk4 = attack4.GetComponent<SpriteRenderer>();
+                if (facing == -1)
+                    satk4.flipX = true;
                 break;
         }
 
@@ -268,12 +289,21 @@ public class Player : MonoBehaviour {
     }
     public void OnRoll()
     {
+        if (controller.collisions.below && rollAgain)
+        {
+            tempVelX = facing * (Mathf.Abs(velocity.x) + 3);
+            for (int i = 0; i < 10; i++)
+            {
+                Vector3 aux = new Vector3(transform.position.x+(-0.5f*facing) + Random.Range(-0.2f, 0.2f), transform.position.y - 0.1f + Random.Range(-0.01f, 0.03f), Random.Range(-0.5f, 0.5f));
+                Instantiate(runSFX, aux, transform.rotation);
+            }
+        }
         if ((!roll) && (!controller.collisions.left && !controller.collisions.right) && !upFlip)
         {
             roll = true;
             auxFlip = false;
             if (velocity.x == 0)
-                tempVelX = facing * (velocity.x + 12);
+                tempVelX = facing *  + 25;
 
             tempVelX = facing * (Mathf.Abs(velocity.x) + 4);
  
@@ -286,6 +316,10 @@ public class Player : MonoBehaviour {
 
 	void UpdateAnimation()
 	{
+        print(controller.collisions.slopeAngleSigned);
+        animator.speed = 1;
+        animator.SetFloat("ReverseRoll", 1f);
+        srender.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         if (upFlip)
         {   if (!auxFlip)
                 auxFlip = true;
@@ -294,7 +328,14 @@ public class Player : MonoBehaviour {
         }
         else if (roll && !auxFlip)
         {
+                
                 animator.Play(Animator.StringToHash("PRollJ"));
+           
+            animator.speed = (Mathf.Abs(velocity.x)/3) ;
+            if (rollFlip)
+                animator.SetFloat("ReverseRoll", -1f);
+               
+            srender.transform.position = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
         }
         else
         {
@@ -332,28 +373,35 @@ public class Player : MonoBehaviour {
             }
             else
             {
-                if (wallSliding)
+                if (meteor)
                 {
-                    animator.Play(Animator.StringToHash("PSlide"));
-                }
-                else if (doubleJump && !auxFlip)
-                {
-
-                    animator.Play(Animator.StringToHash("PRollJ"));
+                    animator.Play(Animator.StringToHash("PAirMeteor"));
                 }
                 else
                 {
-                    if (velocity.y > 0)
+                    if (wallSliding)
                     {
-                        animator.Play(Animator.StringToHash("PJumpU"));
+                        animator.Play(Animator.StringToHash("PSlide"));
                     }
-                    else if (velocity.y > -0.5 && velocity.y < 0.5)
+                    else if (doubleJump && !auxFlip)
                     {
-                        animator.Play(Animator.StringToHash("PJumpM"));
+
+                        animator.Play(Animator.StringToHash("PRollJ"));
                     }
-                    else if (velocity.y < 0)
+                    else
                     {
-                        animator.Play(Animator.StringToHash("PJumpD"));
+                        if (velocity.y > 0)
+                        {
+                            animator.Play(Animator.StringToHash("PJumpU"));
+                        }
+                        else if (velocity.y > -1.5 && velocity.y < 1.5)
+                        {
+                            animator.Play(Animator.StringToHash("PJumpM"));
+                        }
+                        else if (velocity.y < 0)
+                        {
+                            animator.Play(Animator.StringToHash("PJumpD"));
+                        }
                     }
                 }
             }
@@ -409,6 +457,14 @@ public class Player : MonoBehaviour {
 
 
     }
+    IEnumerator RollAgainTimer()
+    {
+        rollAgain = true;
+
+        yield return new WaitForSeconds(0.4f);
+
+        rollAgain = false;
+    }
     void CalculateVelocity()
     {
         float targetVelocityX = directionalInput.x * moveSpeed;
@@ -419,10 +475,13 @@ public class Player : MonoBehaviour {
                 Vector3 aux = new Vector3(transform.position.x + Random.Range(-0.2f, 0.2f), transform.position.y - 0.2f + Random.Range(-0.01f, 0.01f), Random.Range(-0.5f,0.5f));
                 Instantiate(runSFX, aux, transform.rotation);
             }
-            srender.transform.localScale = new Vector3(1.23f, 0.83f, 1f);
 
+            srender.transform.localScale = new Vector3(1.23f, 0.83f, 1f);
+            if(roll)
+                StartCoroutine(RollAgainTimer());
 
             onGroundPrev = true;
+            meteor = false;
         }
         if (!controller.collisions.below)
             onGroundPrev = false;
@@ -457,7 +516,7 @@ public class Player : MonoBehaviour {
 
             }
             if(controller.collisions.slopeAngle == 0)
-            tempVelX = Approach(tempVelX, 0, 6f * Time.deltaTime);
+            tempVelX = Approach(tempVelX, 0, controller.collisions.below?6f * Time.deltaTime: 2f * Time.deltaTime);
             velocity.x = tempVelX;
             
             if ((velocity.x <= 0 && facing == 1) || (velocity.x >= 0 && facing == -1))
@@ -467,12 +526,14 @@ public class Player : MonoBehaviour {
                 {
                     facing *= -1;
                     rollback = true;
-                    animator.SetFloat("ReverseRoll", originalFacing * facing);
+                    rollFlip = true;
+                   
 
                 }
                 else
                 {
                     roll = false;
+                    rollFlip = false;
                     tempVelX = 0;
                     rollback = false;
                     facing = originalFacing;
@@ -531,8 +592,8 @@ public class Player : MonoBehaviour {
         if (controller.collisions.descendingSlope)
         GUI.Label(new Rect(40, 80, 100, 20), "Descending");
         GUI.Label(new Rect(40, 90, 100, 20), controller.collisions.slopeAngle.ToString());
-        
-        GUI.Label(new Rect(40, 110, 100, 20), rollback.ToString());
+        float fps = 1.0f / deltaTime;
+        GUI.Label(new Rect(40, 110, 100, 20),fps.ToString());
     }
 
 }

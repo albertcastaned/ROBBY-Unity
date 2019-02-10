@@ -81,7 +81,7 @@ public class Controller2D : RaycastController
                 }
 
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-
+                collisions.slopeAngleSigned = Vector2.SignedAngle(hit.normal, Vector2.up);
                 if (i == 0 && slopeAngle <= maxSlopeAngle)
                 {
                     if (collisions.descendingSlope)
@@ -150,6 +150,7 @@ public class Controller2D : RaycastController
                     }
                 }
 
+                collisions.slopeAngleSigned = Vector2.SignedAngle(hit.normal, Vector2.up);
                 moveAmount.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
 
@@ -273,7 +274,7 @@ public class Controller2D : RaycastController
         public bool descendingSlope;
         public bool slidingDownMaxSlope;
 
-        public float slopeAngle, slopeAngleOld;
+        public float slopeAngle, slopeAngleOld,slopeAngleSigned;
         public Vector2 slopeNormal;
         public Vector2 moveAmountOld;
         public int faceDir;
@@ -290,6 +291,7 @@ public class Controller2D : RaycastController
 
             slopeAngleOld = slopeAngle;
             slopeAngle = 0;
+            slopeAngleSigned = 0;
         }
     }
 

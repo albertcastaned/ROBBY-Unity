@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\AnimateDestroy.cs" />
     <Compile Include="Assets\AttackD.cs" />
+    <Compile Include="Assets\AttackSpinAir.cs" />
     <Compile Include="Assets\AttackU.cs" />
     <Compile Include="Assets\AttackUAir.cs" />
     <Compile Include="Assets\BulletMovement.cs" />

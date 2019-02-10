@@ -14,6 +14,8 @@ TextureImporter:
     21300018: downS_9
     21300020: downS_10
     21300022: downS_11
+    21300024: downS_12
+    21300026: downS_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -100,7 +102,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 165
+        y: 220
         width: 63
         height: 55
       alignment: 0
@@ -110,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59d6bceccb484ec44aa7a068ee51684f
+      spriteID: b8db59f4f23d9694794edf849e876fed
       vertices: []
       indices: 
       edges: []
@@ -120,7 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
-        y: 165
+        y: 220
         width: 63
         height: 55
       alignment: 0
@@ -130,7 +132,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8412c51590ad1b143a4f5f07312def45
+      spriteID: 376dee01b561fcc4da1ca245cdfd9fa0
       vertices: []
       indices: 
       edges: []
@@ -140,6 +142,26 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 126
+        y: 220
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e792f6da034dd41a48a3a761307086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downS_3
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 165
         width: 63
         height: 55
@@ -150,27 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b66458549cc639c4e88a43964e4be1dc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: downS_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 110
-        width: 63
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2916768ed0df2a3448ddfeb92ff809b0
+      spriteID: b4587ed6f27f3074bbab3eab2a29dd09
       vertices: []
       indices: 
       edges: []
@@ -180,7 +182,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
-        y: 110
+        y: 165
         width: 63
         height: 55
       alignment: 0
@@ -190,7 +192,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c807abc6cd8a2b248b104b4cfd294ca6
+      spriteID: 1d51d30c0cd1b1f4b9d8f7461d9c18fb
       vertices: []
       indices: 
       edges: []
@@ -200,6 +202,26 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 126
+        y: 165
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9337a4b409e70c4da90fd22885568cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downS_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 110
         width: 63
         height: 55
@@ -210,27 +232,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f609fbb4f9bb944eb185a583961fc0e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: downS_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 55
-        width: 63
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5514716af435b940b2c2f0bae1d4c9e
+      spriteID: 7ac27e53d7fc64e4289b4562ee5dd5b0
       vertices: []
       indices: 
       edges: []
@@ -240,6 +242,46 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
+        y: 110
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77afcb59a5ef6145b72a5c170da55cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downS_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 110
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883aec1877d76944baf0b246bd31d497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downS_9
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 55
         width: 63
         height: 55
@@ -250,13 +292,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a873bf99e1377fc48ae4d39574de776d
+      spriteID: c993b15039995b94390f29d8f7df384a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: downS_8
+      name: downS_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 55
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94047daf898b924ebb854bcebbd557e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downS_11
       rect:
         serializedVersion: 2
         x: 126
@@ -270,13 +332,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f56ff4bd06b8b7419825b2326dcca6e
+      spriteID: 926e875fc37d9cc4c9d01ba766c8308d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: downS_9
+      name: downS_12
       rect:
         serializedVersion: 2
         x: 0
@@ -290,13 +352,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb652e1d59fe56b4fa2770a5cd7f42a7
+      spriteID: 6bd608c300da35d4ba4e47d2eeb206fc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: downS_10
+      name: downS_13
       rect:
         serializedVersion: 2
         x: 63
@@ -310,27 +372,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1b5638db95b9004b84e80faace677ea
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: downS_11
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 0
-        width: 63
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 864a25225d225e440b875b3a2e4ec692
+      spriteID: 2f8c311dc5201554f961cfe71793a74d
       vertices: []
       indices: 
       edges: []

@@ -182,6 +182,7 @@ MonoBehaviour:
   atk: {fileID: 1164658949914410, guid: 3c2be42a36313fd4aa2ac09436033090, type: 2}
   atk2: {fileID: 1164658949914410, guid: 384631b8fc62e9f448b8985f9a947a4f, type: 2}
   atk3: {fileID: 1164658949914410, guid: 4dea0a29b32a65247bdfeab2d31bc23e, type: 2}
+  atk4: {fileID: 1236307147437098, guid: 2dfaa282eaee8824da1c3bd88903e599, type: 2}
   runSFX: {fileID: 1012478700719116, guid: 4c39a9d32d1929842becb0bdfa212526, type: 2}
 --- !u!212 &212706674244554772
 SpriteRenderer:
@@ -226,6 +227,6 @@ SpriteRenderer:
   m_Size: {x: 0.36, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

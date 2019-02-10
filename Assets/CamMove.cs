@@ -32,7 +32,7 @@ public class CamMove : MonoBehaviour
     }
     void LateUpdate()
     {
-        print(yPos);
+
         facing = player.getFacing();
 
         if (player.velocity.y < -2f)

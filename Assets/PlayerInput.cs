@@ -71,5 +71,9 @@ public class PlayerInput : MonoBehaviour
         {
             player.Melee(3);
         }
+        if ((Input.GetMouseButtonDown(1) || Input.GetButtonUp("Fire2")) && directionalInput.x != 0 && player.velocity.y != 0 && directionalInput.y ==0)
+        {
+            player.Melee(4);
+        }
     }
 }

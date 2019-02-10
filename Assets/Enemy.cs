@@ -134,11 +134,14 @@ public class Enemy : MonoBehaviour {
         else if ((directionalInput.x == -1))
             facing = -1;
     }
-    public void TakeDamage(float damage, float vx, float vy)
+    public void TakeDamage(float damage, float vx, float vy,bool relative = true)
     {
+        if (!relative)
+            tempSprite.transform.localScale = new Vector3(0.77f, 0.88f, 1f);
+        else
         tempSprite.transform.localScale = new Vector3(1.33f, 0.77f, 1f);
         if (!damaged)
-        {
+      {
             CurrentHealth -= damage;
             damaged = true;
             tempSprite.color = Color.red;
@@ -152,12 +155,19 @@ public class Enemy : MonoBehaviour {
 
 
             damagedTimer = 0.25f;
-            velocity.x += vx + (Random.Range(0.2f, 0.5f) * Mathf.Sign(vx));
-            velocity.y += vy;
+            if (relative)
+                velocity.x += vx + (Random.Range(0.2f, 0.5f) * Mathf.Sign(vx));
+            else
+                velocity.x = vx;
+
+            if (relative)
+                velocity.y += vy;
+            else
+                velocity.y = vy;
 
             if (CurrentHealth <= 0)
                 Die();
-        }
+       }
 
 
     }

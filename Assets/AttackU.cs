@@ -74,9 +74,9 @@ public class AttackU : MonoBehaviour {
             {
                 
                 if(!spr.flipX)
-                enemy.TakeDamage(20, 1.3f, 6f);
+                enemy.TakeDamage(20, 1.7f, 6f);
                 else
-                enemy.TakeDamage(20, -1.3f, 6f);
+                enemy.TakeDamage(20, -1.7f, 6f);
 
             StartCoroutine(Pause());
             }

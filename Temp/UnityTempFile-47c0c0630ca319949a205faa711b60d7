@@ -4,6 +4,14 @@
 -langversion:4
 -out:Temp/Assembly-CSharp.dll
 -nostdlib
+-r:Library/ScriptAssemblies/Cinemachine.dll
+-r:Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll
+-r:Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+-r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll
+-r:Library/ScriptAssemblies/com.unity.cinemachine.editor.dll
+-r:Library/ScriptAssemblies/Unity.TextMeshPro.dll
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.8f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.8f1\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.8f1\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -66,14 +74,6 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.8f1\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.8f1\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.8f1\Editor\Data\Managed/Unity.Locator.dll"
--r:Library/ScriptAssemblies/Cinemachine.dll
--r:Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll
--r:Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
--r:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
--r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll
--r:Library/ScriptAssemblies/com.unity.cinemachine.editor.dll
--r:Library/ScriptAssemblies/Unity.TextMeshPro.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.8f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.8f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.8f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
@@ -191,6 +191,7 @@
 -define:ENABLE_VSTU
 Assets/AnimateDestroy.cs
 Assets/AttackD.cs
+Assets/AttackSpinAir.cs
 Assets/AttackU.cs
 Assets/AttackUAir.cs
 Assets/BulletMovement.cs
